@@ -7,7 +7,7 @@ document.getElementById('messageForm').addEventListener('submit', function(event
     const browser = navigator.userAgent;
     const screenSize = `${window.screen.width}x${window.screen.height}`;
 
-    fetch(`https://ipinfo.io/json?token=${process.env.IPINFO_API_KEY}`)
+    fetch(`https://ipinfo.io/json?token=27ff9607c05b9b`)
         .then(response => response.json())
         .then(data => {
             const ip = data.ip;
