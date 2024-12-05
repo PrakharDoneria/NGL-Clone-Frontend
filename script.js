@@ -1,6 +1,9 @@
 document.getElementById('messageForm').addEventListener('submit', function(event) {
     event.preventDefault();
 
+    // Show loading message
+    document.getElementById('responseMessage').textContent = 'Sending message... Please wait!';
+    
     const message = document.getElementById('message').value;
     const deviceType = /Mobi|Android/i.test(navigator.userAgent) ? "Mobile" : "Desktop";
     const os = navigator.platform;
@@ -39,7 +42,7 @@ document.getElementById('messageForm').addEventListener('submit', function(event
             .then(response => response.json())
             .then(data => {
                 if (data.success) {
-                    document.getElementById('responseMessage').textContent = 'Message sent successfully!';
+                    document.getElementById('responseMessage').textContent = 'Message sent successfully! 🚀';
                 } else {
                     document.getElementById('responseMessage').textContent = 'Failed to send message. Please try again.';
                 }
